@@ -318,6 +318,9 @@
 img.housing {
     opacity: 0.8;
 }
+p#date {
+    display: initial;
+}
 
 
 
@@ -411,8 +414,16 @@ img.housing {
         </div>
 
         <div class="footer-copyright">
-            <h5 class="copyright">2022 Copyright © Atlas Senior Living - <a class="link" href="https://atlasseniorliving.com/privacy-policy/" target="_blank">Privacy Policy</a> | <a class="link" href="#" target="_blank">Terms of Use</a> | <a class="link" href="https://atlasseniorliving.com/legacy-ridge-buckhead/careers/" target="_blank">Careers</a> | <a class="bug" href="https://atlasseniorliving.com/website-feedback/" target="_blank">𓆣 Report a bug or technical issue</a></h5>
+            <h5 class="copyright"><p id="date"></p> Copyright © Atlas Senior Living - <a class="link" href="https://atlasseniorliving.com/privacy-policy/" target="_blank">Privacy Policy</a> | <a class="link" href="#" target="_blank">Terms of Use</a> | <a class="link" href="https://atlasseniorliving.com/legacy-ridge-buckhead/careers/" target="_blank">Careers</a> | <a class="bug" href="https://atlasseniorliving.com/website-feedback/" target="_blank">𓆣 Report a bug or technical issue</a></h5>
         </div>
+
+        <script>
+            //auto actualizacion de año con javascript
+            const d = new Date();
+            let year = d.getFullYear();
+            document.getElementById("date").innerHTML = year;
+                    //debe de correr despues del ID indicado
+        </script>
 
     </body>
 
