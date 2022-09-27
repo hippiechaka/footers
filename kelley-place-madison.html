@@ -321,7 +321,7 @@ img.absolute {
     top:0;
     left:0;
     bottom: 0;
-    opacity: 0.05;
+    opacity: 0.04;
 }
 
 
@@ -335,6 +335,9 @@ img.absolute {
     <section class="center">
     <img class="absolute" src="https://atlasseniorliving.com/madison-heights-enterprise/wp-content/uploads/sites/20/2022/09/feather-icon.png">
     <div class="table__wrapper">
+
+        <!--START REACT COMPONENT-->
+        <div id="like_button_container"></div>
         
         <table class="table" summary="This is a summary of table contents.">
         <thead>
@@ -413,7 +416,7 @@ img.absolute {
         </div>
 
         <div class="footer-copyright">
-           <h5 class="copyright"><p id="date"></p> Copyright © Atlas Senior Living - <a class="link" href="https://atlasseniorliving.com/privacy-policy/" target="_blank">Privacy Policy</a> | <a class="link" href="#" target="_blank">Terms of Use</a> | <a class="link" href="https://atlasseniorliving.com/madison-heights-enterprise/careers/" target="_blank">Careers</a> | <a class="bug" href="https://atlasseniorliving.com/website-feedback/" target="_blank">𓆣 Report a bug or technical issue</a></h5>
+           <h5 class="copyright"><p id="date"></p> Copyright © Atlas Senior Living - <a class="link" href="https://atlasseniorliving.com/privacy-policy/" target="_blank">Privacy Policy</a> | <a class="link" href="#" target="_blank">Terms of Use</a> | <a class="link" href="https://atlasseniorliving.com/madison-heights-enterprise/careers/" target="_blank">Careers</a> | <a class="link" href="https://atlasseniorliving.com/about-covid19/" target="_blank">COVID-19</a> | <a class="bug" href="https://atlasseniorliving.com/website-feedback/" target="_blank">𓆣 Report a bug or technical issue</a></h5>
         </div>
 
         <script>
@@ -422,7 +425,14 @@ img.absolute {
             let year = d.getFullYear();
             document.getElementById("date").innerHTML = year;
             //debe de correr despues del ID indicado
-        </script>        
+        </script>
+        
+        <!-- Cargar React. -->
+        <!-- Nota: cuando se despliegue, reemplazar "development.js" con "production.min.js". -->
+        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+        <!-- Cargamos nuestro componente de React. -->
+        <script src="like_button.js"></script>
 
     </body>
 
