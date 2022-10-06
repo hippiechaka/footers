@@ -335,6 +335,8 @@ img.absolute {
     <section class="center">
     <img class="absolute" src="https://atlasseniorliving.com/madison-heights-enterprise/wp-content/uploads/sites/20/2022/09/feather-icon.png">
     <div class="table__wrapper">
+
+        <div id="like_button_container"></div>
         
         <table class="table" summary="This is a summary of table contents.">
         <thead>
@@ -424,13 +426,41 @@ img.absolute {
             //debe de correr despues del ID indicado
         </script>
         
-            <!-- Load React. -->
-            <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+            <!-- Cargar React. -->
+            <!-- Nota: cuando se despliegue, reemplazar "development.js" con "production.min.js". -->
             <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
             <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
-            
-            <!-- Load our React component. -->
+            <!-- Cargamos nuestro componente de React. -->
             <script src="like_button.js"></script>
+
+            <script>
+                'use strict';
+
+                    const e = React.createElement;
+
+                    class LikeButton extends React.Component {
+                        constructor(props) {
+                            super(props);
+                            this.state = { liked: false };
+                        }
+
+                        render() {
+                            if (this.state.liked) {
+                                return 'You liked this.';
+                            }
+
+                            return e(
+                                'button',
+                                { onClick: () => this.setState({ liked: true }) },
+                                'Like'
+                            );
+                        }
+                    }
+
+                    const domContainer = document.querySelector('#like_button_container');
+                    const root = ReactDOM.createRoot(domContainer);
+                    root.render(e(LikeButton));
+            </script>
 
     </body>
 
