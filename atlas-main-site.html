@@ -345,6 +345,13 @@
     p.address {
         font-size: 14px;
     }
+    p.address-lowercase, a.address-lowercase {
+        font-size: 14px;
+        text-transform: lowercase!important;
+    }
+    a.address-lowercase {
+        text-decoration: underline!important;
+    }
 
     img.housing {
         opacity: 0.8;
@@ -498,7 +505,7 @@
                                     <p class="address">Birmingham, Alabama 35205</p>
                                 </li>
                                 <li>
-                                    <p class="address">info@atlasseniorliving.com</p>
+                                    <p class="address-lowercase"><a class="address-lowercase" href="mailto:info@atlasseniorliving.com">info@atlasseniorliving.com</a></p>
                                 </li>
                             </ul>
 
